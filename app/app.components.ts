@@ -1,13 +1,14 @@
-import { Component } from 'angular2/core';
+import { Component, EventEmitter } from 'angular2/core';
+import {TapListComponent} from'./tap-list.component';
+import {TapRoom} from './tap.model'
 @Component({
   selector: 'my-app',
+  directives: [TapListComponent],
   template: `
   <div class = "container">
     <h1>Keg List</h1>
-    <ul *ngFor="#tap of tapRoom">
-    <li><h3> Name: {{tap.name}}</h3><ul><h4><li> Brand: {{tap.brand}}</li><li>Price: {{tap.price}}</li><li>ABV: {{tap.abv}}%</li></h4></ul></li>
-    </ul>
-
+    <tap-list [tapList]="tapRoom"></tap-list>
+  </div>
   `
 })
 export class AppComponent{
@@ -17,12 +18,5 @@ export class AppComponent{
       new TapRoom("IPA", "Bud", 6, 10, 0),
       new TapRoom("Miller Draft", "Miller", 6, 7, 1)
     ];
-  }
-}
-
-export class TapRoom {
-  public tapEmpty: boolean = false;
-  constructor(public name: string, public brand: string, public price: number, public abv: number, public id: number) {
-
   }
 }
