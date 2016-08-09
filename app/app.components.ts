@@ -7,7 +7,7 @@ import {TapRoom} from './tap.model'
   template: `
   <div class = "container">
     <h1>Keg List</h1>
-    <tap-list [tapList]="tapRoom"></tap-list>
+    <tap-list [tapList]="tapRoom" (onTapSelect)="tapWasSelected($event)"></tap-list>
   </div>
   `
 })
@@ -16,7 +16,9 @@ export class AppComponent{
   constructor(){
     this.tapRoom = [
       new TapRoom("IPA", "Bud", 6, 10, 0),
-      new TapRoom("Miller Draft", "Miller", 6, 7, 1)
     ];
+  }
+  tapWasSelected(clickedTap: TapRoom): void{
+
   }
 }
