@@ -9,7 +9,7 @@ import {NewTapComponent} from './new-tap.component';
   outputs: ['onTapSelect'],
   directives: [TapComponent, EditTapDetailComponent, NewTapComponent],
   template: `
-  <tap-display *ngFor="#tap of tapList" (click)="tapClicked(tap)"
+  <tap-display *ngFor="#tap of tapList" (click)="tapClicked(tap)" 
   [class.selected]="tap === selectedTap" [tap]="tap"></tap-display>
   <edit-tap-details *ngIf="selectedTap"[tap]="selectedTap"></edit-tap-details>
   <new-tap (onSubmitNewTap)="createTap($event)"></new-tap>

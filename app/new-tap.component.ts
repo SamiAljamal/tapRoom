@@ -13,6 +13,7 @@ import {TapRoom} from './tap.model';
    <input placeholder ="Price" class="col-sm-8 input-lg" #newPrice>
    <input placeholder ="ABV" class="col-sm-8 input-lg" #newABV>
    <button (click)="addTap(newName,newBrand,newPrice,newABV)">Add</button>
+   </div>
   `
 })
 
